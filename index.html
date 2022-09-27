@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Qovery</title>
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/fonts.css">
+    </head>
+
+    <body>
+        <!-- Main Header -->
+        <header class="maxWidthBodyDark maxWrapper mainHeader">
+            <a href="#"><img src="../public/assets/images/logo-qovery.svg" alt="logo qovery"></a>
+        </header>
+        
+        <!-- Second Header -->
+        <header class="maxWidthBodyDark maxWrapper secondHeader">
+            <div class="textSecondHeader">
+                <div class="titleSecondHeader">
+                    <h1>Qovery Engine</h1>
+                    <div class="star">
+                        <a href="#" class="view">
+                            <img src="../public/assets/images/github.svg" alt="logo">
+                            <span>Star</span> 
+                            <span> 12</span> 
+                        </a>
+                        
+                    </div>
+                </div>
+
+                <h3 class="tertiaryTitle">Abstraction layer to deploy microservices applications on any Cloud provider.</h3>
+
+                <p>Qovery Engine is an open-source abstraction layer product that turns easy apps deployment on AWS, GCP, Azure and others Cloud providers.</p>
+
+                <div class="link">
+                    <a href="#" class="linkGithub">
+                        <img src="../public/assets/images/github.svg" alt="logo github">
+                        <span>See on Github</span>
+                    </a>
+                    <a href="#" class="linkDiscord">
+                        <img src="../public/assets/images/discord.svg" alt="logo discord">
+                        <span>Join us on Discord</span>
+                    </a>
+                </div>
+            </div>
+ 
+            <img src="../public/assets/images/jumbotron.svg" alt="image qovery">
+        </header>
+        
+        <!-- Description top -->
+        <section class="minWrapper description-top">
+            <h1>How does it work?</h1>
+            <p>Qovery Engine is an open-source abstraction layer product that turns easy apps deployment on AWS, GCP, Azure and others Cloud providers. The Qovery Engine is coded in Rust and takes advantage of Terraform, Helm, Kubectl, Docker to manage resources.</p>
+            <img src="../public/assets/images/how.svg" alt="schema">
+        </section>
+        
+        <!-- Description mid -->
+        <section class="minWrapper description-mid">
+            <h2>Usage</h2>
+            <img src="../public/assets/images/usage.svg" alt="schema">
+            <p>Initialize EKS (AWS Kubernetes) and ECR (AWS container registry) on AWS</p>
+        </section>
+        
+        <!-- Description coding -->
+        <section class="minWrapper description-coding">
+            
+            <pre class="coding">
+<!-- Must respect this indent -->
+<span class="blue">let</span> engine <span class="purple">=</span> Engine::new(
+context, <span class="grey">// parameters</span>
+local_docker, <span class="grey">// initialize Docker as a Build Platform</span>
+ecr, <span class="grey">// initialize Elastic Container Registry</span>
+aws, <span class="grey">// initialize AWS account</span>
+cloudflare, <span class="grey">// initialize Cloudflare as DNS Nameservers
+    );</span>
+    
+    <span class="blue">let</span> session <span class="purple">=</span> <span class="blue">match</span> engine.<span class="orange">session()</span> {
+        <span class="turquoise">Ok(</span>session) <span class="purple">=></span> session, <span class="grey">// get the sessio</span>n
+        <span class="turquoise">Err(</span>config_error) <span class="purple">=></span> <span class="turquoise">panic!(</span>"<span class="blue">configuration error {:?}</span>", config_error),
+    };
+    
+    <span class="blue">let mut</span> tx <span class="purple">=</span> session.<span class="orange">transaction()</span>;
+    
+    <span class="grey">// create EKS (AWS managed Kubernetes cluster)</span>
+    tx.<span class="orange">create_kubernetes(</span>&eks);
+    
+    <span class="grey">// create the infrastructure and wait for the result</span>
+    <span class="blue">match</span> tx.<span class="orange">commit()</span> { 
+        TransactionResult::<span class="turquoise">Ok</span> <span class="purple">=></span> <span class="turquoise">println!(</span>"<span class="blue">OK</span>"),
+        TransactionResult::<span class="orange">Rollback(</span>commit_err) <span class="purple">=></span> println!("<span class="blue">ERROR but rollback OK</span>"), 
+        TransactionResult::<span class="orange">UnrecoverableError(</span>commit_err, rollback_err) <span class="purple">=></span> println!("<span class="blue">FATAL ERROR</span>")
+    };
+            </pre>
+                    
+            <div class="link">
+                <a href="#" class="linkGithub">
+                    <img src="../public/assets/images/github.svg" alt="logo github">
+                    <span>See on Github</span>
+                </a>
+                <a href="#" class="linkDiscord">
+                    <img src="../public/assets/images/discord.svg" alt="logo discord">
+                    <span>Join us on Discord</span>
+                </a>
+            </div>
+            
+        </section>
+        
+        <!-- Description bottom -->
+        <section class="midWrapper description-bottom ">
+            <div class="card">
+                <div class="cardImg">
+                    <img src="../public/assets/images/deploy.svg" alt="deploy">
+                </div>
+                <h2>Deploy real world applications</h2>
+                <p>Qovery Engine empowers you to deploy complex applications, such as a backend, a frontend, and a database in a very simple way.</p>
+                <p>Servers, networking, security, all is done by the Engine for you.</p>
+                <a href="#">See more</a>
+            </div>
+
+            <div class="card">
+                <div class="cardImg">
+                    <img src="../public/assets/images/resiliency.svg" alt="resiliency">
+                </div>
+                <h2>Resiliency is key</h2>
+                <p>Qovery Engine knows when something goes wrong on the deployment of your applications. Qovery Engine is built with resiliency in mind. </p>
+                <p>A transactional engine inspired by what is provided into ACID databases has been developed at the heart of the product to rollback on a consistent and working application version when something goes wrong.</p>
+                <a href="#">See more</a>
+            </div>
+
+            <div class="card">
+                <div class="cardImg">
+                    <img src="../public/assets/images/tools.svg" alt="tools">
+                </div>
+                <h2>On top of the best tools</h2>
+                <p>Qovery Engine does not reinvent the wheel. It takes advantage of the best tools in the Cloud industry, such as Kubernetes, Terraform, and Helm to manage the deployment of the infrastructure and your applications.</p>
+                <p>Servers, networking, security, all is done by the Engine for you.</p>
+                <a href="#">See more</a>
+            </div>
+
+            <div class="card">
+                <div class="cardImg">
+                    <img src="../public/assets/images/extensible.svg" alt="extensible">
+                </div>
+                <h2>Extensible</h2>
+                <p>Qovery Engine is built to be highly extensible. Adding the support of a Cloud provider or a Continuous Integration platform is as simple as implementing a simple programmatic interface.</p>
+                <a href="#">See more</a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="maxWrapper">
+            <h2>They use Qovery Engine</h2>
+            <div class="footerImg">
+                <img src="../public/assets/images/logo-strapi.svg" alt="strapi">
+                <img src="../public/assets/images/logo-zendesk.svg" alt="Zendesk">
+                <img src="../public/assets/images/logo-helios.svg" alt="Helios">
+            </div>
+        </footer>
+    </body>
+</html>

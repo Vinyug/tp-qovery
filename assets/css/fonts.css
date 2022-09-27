@@ -1,0 +1,52 @@
+/* HKGROTESK */
+
+@font-face {
+    font-family: 'hkgrotesk-extrabold';
+    src: url('../fonts/Fontes-Systeme/HKGrotesk-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'hkgrotesk-bold';
+    src: url('../fonts/Fontes-Systeme/HKGrotesk-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'hkgrotesk-semibold';
+    src: url('../fonts/Fontes-Systeme/HKGrotesk-SemiBold.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'hkgrotesk-semiboldlegacy';
+    src: url('../fonts/Fontes-Systeme/HKGrotesk-SemiBoldLegacy.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+
+/* SFUITEXT */
+
+@font-face {
+    font-family: 'sfuitext-bold';
+    src: url('../fonts/Fontes-Systeme/SFUIText-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'sfuitext-regular';
+    src: url('../fonts/Fontes-Systeme/SFUIText-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* HACK */
+
+@font-face {
+    font-family: 'hack-regular';
+    src: url('../fonts/Fontes-Systeme/Hack-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
