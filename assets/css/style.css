@@ -225,7 +225,7 @@ img {
 .description-top {
     text-align: center;
 }
-.description-top h1 {
+.description-top h2 {
     margin-top: 5.5rem;
     font-family: var(--primaryTitle);
     font-size: 2rem;
