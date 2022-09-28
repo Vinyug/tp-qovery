@@ -4,7 +4,8 @@
     /* --gridImageForDebug: url('grid-16x16.png'); */
 
     /* Wrapper */
-    --wrapper: 1152px;
+    --wrapperMax: 1152px;
+    --wrapperMid: 1056px;
     --wrapperMin: 848px;
 
     /* Global colors */
@@ -48,6 +49,8 @@ body {
     font-family: 'sfuitext-regular',  sans-serif;
     font-size: 1rem;
     line-height: 1;
+    display: flex;
+    flex-direction: column;
 }
 .maxWidthBodyDark {
     background-color: var(--dark);
@@ -55,10 +58,10 @@ body {
     clip-path: inset(0 -100vmax);
 }
 .maxWrapper {
-    margin-inline: max(2rem, 50% - var(--wrapper)/2);
+    margin-inline: max(2rem, 50% - var(--wrapperMax)/2);
 }
 .midWrapper {
-    margin-inline: max(5rem, 50% - var(--wrapper)/2);
+    margin-inline: max(5rem, 50% - var(--wrapperMid)/2);
 }
 .minWrapper {
     margin-inline: max(2rem, 50% - var(--wrapperMin)/2);
@@ -79,7 +82,7 @@ img {
         margin: 0 auto;
     }
 }
-@media screen and (max-width: 464px) {
+@media screen and (max-width: 479px) {
     .link {
         flex-direction: column;
     }
@@ -108,7 +111,7 @@ img {
     background-color: var(--grey);
     margin-right: 1.5rem;
 }
-@media screen and (max-width: 464px) {
+@media screen and (max-width: 479px) {
     .linkGithub {
         margin: 0 auto 1rem auto;
     }
@@ -131,8 +134,7 @@ img {
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 2rem;
-    padding-bottom: max(12.1%);
-    
+    padding-bottom: clamp(2rem, 10%, 11rem);
 }
 @media screen and (max-width: 1232px) 
 {
@@ -145,7 +147,7 @@ img {
 .textSecondHeader {
     display: flex;
     flex-direction: column;
-    padding-top: 6.2rem;
+    padding-top: clamp(2rem, 5%, 6.2rem);
     max-width: 553px;
     flex: 1 0 44.5%; 
 }
@@ -224,9 +226,9 @@ img {
 /* Description Top */
 .description-top {
     text-align: center;
+    padding-top: clamp(2rem, 5%, 5.5rem);
 }
 .description-top h2 {
-    margin-top: 5.5rem;
     font-family: var(--primaryTitle);
     font-size: 2rem;
 }
@@ -239,11 +241,11 @@ img {
 
 /* Description Mid  */
 .description-mid {
-    position: relative;
     text-align: center;
+    position: relative;
+    margin-top: clamp(2rem, 8%, 8rem);
 }
 .description-mid h2 {
-    margin-top: 8rem;
     height: auto;
     font-family: var(--secondaryTitle);
     font-size: 2rem;
@@ -270,7 +272,7 @@ img {
     font-family: var(--codingText);
     background-color: var(--white);
     font-size: 0.85rem;
-    padding: 4.25rem 1rem 1rem 1rem;
+    padding: clamp(1rem, 5%, 4.25rem) 1rem 1rem 1rem;
     overflow-wrap: break-word;
 }
 .coding .blue {
@@ -290,7 +292,7 @@ img {
 }
 .description-coding .link {
     justify-content: center;
-    padding: 3.25rem 0;
+    padding: clamp(1rem, 5%, 3.25rem) 0;
 }
 
 
@@ -300,21 +302,27 @@ img {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
-    gap: 3rem;
+    align-items: flex-start;
+    gap: clamp(1.5rem, 5%, 3rem);
 }
-@media screen and (max-width: 992px)
+@media screen and (max-width: 1052px)
 {
     .description-bottom {
         flex-direction: column;
+        align-items: center;
+    }
+}
+@media screen and (max-width: 479px) {
+    .midWrapper {
+        margin-inline: max(2rem, 50% - var(--wrapperMax)/2);
     }
 }
 .card {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    max-width: 384px;
-    flex: 0 0 60%;
+    max-width: 416px;
+    flex: 0 1 60%;
 }
 .cardImg {
     display: flex;
@@ -350,13 +358,13 @@ footer {
     flex-direction: column;
     text-align: center;
     flex-wrap: wrap;
-    margin-top: 11rem;
-    margin-bottom: 5rem;
+    margin-top: clamp(3.5rem, 11%, 11rem);
+    margin-bottom: clamp(2rem, 5%, 5rem);
 }
 footer h2 {
     font-family: var(--secondaryTitle);
     font-size: 2rem;
-    margin-bottom: 2.25rem;
+    margin-bottom: clamp(1rem, 5%, 2.25rem);
 }
 .footerImg {
     display: flex;

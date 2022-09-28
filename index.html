@@ -75,22 +75,22 @@ aws, <span class="grey">// initialize AWS account</span>
 cloudflare, <span class="grey">// initialize Cloudflare as DNS Nameservers
     );</span>
     
-    <span class="blue">let</span> session <span class="purple">=</span> <span class="blue">match</span> engine.<span class="orange">session()</span> {
-        <span class="turquoise">Ok(</span>session) <span class="purple">=></span> session, <span class="grey">// get the sessio</span>n
-        <span class="turquoise">Err(</span>config_error) <span class="purple">=></span> <span class="turquoise">panic!(</span>"<span class="blue">configuration error {:?}</span>", config_error),
-    };
-    
-    <span class="blue">let mut</span> tx <span class="purple">=</span> session.<span class="orange">transaction()</span>;
-    
-    <span class="grey">// create EKS (AWS managed Kubernetes cluster)</span>
-    tx.<span class="orange">create_kubernetes(</span>&eks);
-    
-    <span class="grey">// create the infrastructure and wait for the result</span>
-    <span class="blue">match</span> tx.<span class="orange">commit()</span> { 
-        TransactionResult::<span class="turquoise">Ok</span> <span class="purple">=></span> <span class="turquoise">println!(</span>"<span class="blue">OK</span>"),
-        TransactionResult::<span class="orange">Rollback(</span>commit_err) <span class="purple">=></span> println!("<span class="blue">ERROR but rollback OK</span>"), 
-        TransactionResult::<span class="orange">UnrecoverableError(</span>commit_err, rollback_err) <span class="purple">=></span> println!("<span class="blue">FATAL ERROR</span>")
-    };
+<span class="blue">let</span> session <span class="purple">=</span> <span class="blue">match</span> engine.<span class="orange">session()</span> {
+    <span class="turquoise">Ok(</span>session) <span class="purple">=></span> session, <span class="grey">// get the sessio</span>n
+    <span class="turquoise">Err(</span>config_error) <span class="purple">=></span> <span class="turquoise">panic!(</span>"<span class="blue">configuration error {:?}</span>", config_error),
+};
+
+<span class="blue">let mut</span> tx <span class="purple">=</span> session.<span class="orange">transaction()</span>;
+
+<span class="grey">// create EKS (AWS managed Kubernetes cluster)</span>
+tx.<span class="orange">create_kubernetes(</span>&eks);
+
+<span class="grey">// create the infrastructure and wait for the result</span>
+<span class="blue">match</span> tx.<span class="orange">commit()</span> { 
+    TransactionResult::<span class="turquoise">Ok</span> <span class="purple">=></span> <span class="turquoise">println!(</span>"<span class="blue">OK</span>"),
+    TransactionResult::<span class="orange">Rollback(</span>commit_err) <span class="purple">=></span> println!("<span class="blue">ERROR but rollback OK</span>"), 
+    TransactionResult::<span class="orange">UnrecoverableError(</span>commit_err, rollback_err) <span class="purple">=></span> println!("<span class="blue">FATAL ERROR</span>")
+};
             </pre>
                     
             <div class="link">
